@@ -1,0 +1,6 @@
+gate
+red_flare
+yellow_flare
+red_bowl
+blue_bowl
+mat
