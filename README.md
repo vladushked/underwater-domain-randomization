@@ -76,17 +76,72 @@ Training parameters:
 - Same as on real data
 - 500 images total: 400 in train set, 100 in validation set;
 
+![Train batch](/images/training_synthetic/batch.png)
+Train batch
+
 Training on round_1 (randomized fog and camera position) and round_3 (as round_1 with randomized pool textures) data show best results
 
 Training on fully randomized data show lower quality on validation data
 
+![Metrics](/images/training_synthetic/metrics.png)
+Metrics
+
+![Validaton on real data](/images/training_synthetic/val_syn.png)
+Validaton on real data
+
+![Validaton on real data](/images/training_synthetic/val_real.png)
+Validaton on real data
 
 ### Synthetic dataset enhancement
 
 Generative adversarial network - CycleGAN
 Style transferring from simulation to reality
 
+![CycleGAN unpaired and unlabeled training data](images/enchancement/batch.png)
+CycleGAN unpaired and unlabeled training data
+
+![CycleGAN enhancement](images/enchancement/visualize.png)
+CycleGAN enhancement
+
+![Training CycleGAN](images/enchancement/training.png)
+Training CycleGAN
+
+![Metrics](images/enchancement/metrics.png)
+Metrics
+
+![Validation round_gan on synthetic data](images/enchancement/val_syn.png)
+Validation round_gan on synthetic data
+
+![Validation round_gan on real data](images/enchancement/val_real.png)
+Validation round_gan on real data
+
+![Comparing round_1 and round_gan predictions](images/enchancement/comparing.png)
+Comparing round_1 and round_gan predictions
+
+### Training round_gan on small amount of real data
+
+Trained on:
+- 366 real images (⅓ from original dataset) (293 train, 73 validation images);
+- 50 epochs;
+
+![Metrics](images/training_small_ench/metrics.png)
+Metrics
+
+![Validation round_refined_gan on real data](images/training_small_ench/val.png)
+Validation round_refined_gan on real data
+
+
 ## Results
+
+![Results table](images/results/table.png)
+Results table
+
+![best simulation and simulation after GAN refinement](images/results/sim.png)
+best simulation and simulation after GAN refinement
+
+![real and gan+real](images/results/real.png)
+real and gan+real
+
 
 ## Conclusion
 
