@@ -151,4 +151,17 @@ real and gan+real
 
 ## References
 
-[1] Plotnikov, Vladislav & Akhtyamov, T. & Kopanev, Pavel & Serebrenny, Vladimir. (2022). Classical and neural network approaches to object detection in underwater robotics competitions. AIP Conference Proceedings. 2383. 020021. 10.1063/5.0083975. 
+1. Plotnikov, Vladislav & Akhtyamov, T. & Kopanev, Pavel & Serebrenny, Vladimir. (2022). Classical and neural network approaches to object detection in underwater robotics competitions. AIP Conference Proceedings. 2383. 020021. 10.1063/5.0083975. 
+
+2. Nogues, F. C., Huie, A., & Dasgupta, S. (2018). Object Detection using Domain Randomization and Generative Adversarial Refinement of Synthetic Images. arXiv. https://doi.org/10.48550/ARXIV.1805.11778
+
+3. Tobin, J., Fong, R., Ray, A., Schneider, J., Zaremba, W., & Abbeel, P. (2017). Domain Randomization for Transferring Deep Neural Networks from Simulation to the Real World. arXiv. https://doi.org/10.48550/ARXIV.1703.06907
+
+4. Borrego, J., Dehban, A., Figueiredo, R., Moreno, P., Bernardino, A., & Santos-Victor, J. (2018). Applying Domain Randomization to Synthetic Data for Object Category Detection. arXiv. https://doi.org/10.48550/ARXIV.1807.09834
+
+5. Zhu, J.-Y., Park, T., Isola, P., & Efros, A. A. (2017). Unpaired Image-to-Image Translation using Cycle-Consistent Adversarial Networks. arXiv. https://doi.org/10.48550/ARXIV.1703.10593
+
+6. Liu, H., Song, P., & Ding, R. (2020). WQT and DG-YOLO: towards domain generalization in underwater object detection. arXiv. https://doi.org/10.48550/ARXIV.2004.06333
+
+7. Tremblay, J., Prakash, A., Acuna, D., Brophy, M., Jampani, V., Anil, C., To, T., Cameracci, E., Boochoon, S., & Birchfield, S. (2018). Training Deep Networks with Synthetic Data: Bridging the Reality Gap by Domain Randomization. arXiv. https://doi.org/10.48550/ARXIV.1804.06516
+
