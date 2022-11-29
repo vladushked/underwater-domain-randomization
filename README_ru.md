@@ -174,6 +174,7 @@ Validation round_refined_gan on real data
 
 В таблице ниже представлены значения метрик для всех моделей, которые были обучены в ходе данного проекта, рассчитанных на валидационной выборке из датасета с реальными данными. Также в таблице для каждой модели приведены: время обучения, количество эпох обучения, размер датасета.
 
+Table 1. Validation metrics, training time, number of epochs, dataset volume (“real” - real data, "round_1" - fog and camera position randomization, "round_2" - as "round_1" with randomized underwater object textures, "round_3" - as "round_1" with randomized pool textures, "round_0" - as "round_1" and texture randomization of all objects and the pool, "round_gan" - "round_1" enhanced with CycleGAN, "round_refined_gan" - "round_gan" fine-tuned with small amount of real data)
 ![Results table](images/results/table.png)
 Results table
 
@@ -187,9 +188,9 @@ real and gan+real
 
 ## Conclusion
 
-- Обучение на рандомизированных данных из симулятора показало низкое качество распознавания на валидационном множестве;
-- Использование CycleGAN для улучшения синтетических изображений в наборе данных улучшило качество распознавания реальных объектов;
-- Обучение на улучшенных данных и небольшом количестве реальных данных дало почти такое же качество распознавания, как и обучение только на реальных данных.
+В ходе данного проекта были рассмотрены методы обучения модели для распознавания объектов с использованием синтетических данных. Для обучения модели распознавания был использован симулятор и автоматическая генерация данных, которая позволяет в кратчайшие сроки получить датасет любого объема. Для уменьшения reality-gap были использованы два метода - рандомизация сцены и улучшение синтетических данных с помощью GAN. Из четырех моделей обученных на синтетических данных с разной степенью рандомизации сцены лучшее качество распознавания на реальных данных показала модель, которая была обучена на данных с рандомизацией положения камеры, тумана и текстур бассейна. Модели обученные на данных с рандомизацией текстур объектов показали худшее качество распознавания на реальных данных. Это связано с тем, что в датасете присутствуют объекты, которые идентичны по форме и отличаются только цветом. Метод улучшения синтетических данных с помощью GAN позволил значительно увеличить качество распознавания на реальных данных, но при этом общее время обучения увеличивается за счет обучения GAN. Fine-tuning на небольшом количестве реальных данных позволил добиться сопоставимого качества распознавания с эталонной моделью, обученной только на реальных данных. Таким образом, рассмотренные методы обучения на синтетических данных позволяют эффективно обучить модель распознавания объектов до уровня, достаточного для использования в реальных приложениях. При этом общее время обучения сокращается в разы за счет того, что требуется минимальное количество реальных данных для fine-tuning. 
+
+
 
 ## Acknowledgements
 
@@ -197,17 +198,12 @@ real and gan+real
 
 ## References
 
-1. Plotnikov, Vladislav & Akhtyamov, T. & Kopanev, Pavel & Serebrenny, Vladimir. (2022). Classical and neural network approaches to object detection in underwater robotics competitions. AIP Conference Proceedings. 2383. 020021. 10.1063/5.0083975. 
+1. Plotnikov, Vladislav & Akhtyamov, T. & Kopanev, Pavel & Serebrenny, Vladimir. (2022). Classical and neural network approaches to object detection in underwater robotics competitions. AIP Conference Proceedings. 2383. 020021. 10.1063/5.0083975.
+2. Priyadarshni, Divya & Kolekar, Maheshkumar. (2020). Underwater Object Detection and Tracking. 10.1007/978-981-15-0751-9_76.
+3. Fayaz, Sheezan & Parah, Shabir & Qureshi, G.. (2022). Underwater object detection: architectures and algorithms – a comprehensive review. Multimedia Tools and Applications. 81. 10.1007/s11042-022-12502-1. 
+4. Sarkar, Pratima & De, Sourav & Gurung, Sandeep. (2022). A Survey on Underwater Object Detection. 10.1007/978-981-19-0489-9_8. 
+5. Nogue, Fernando & Huie, Andrew & Dasgupta, Sakyasingha. (2018). Object Detection using Domain Randomization and Generative Adversarial Refinement of Synthetic Images
+6. Zhu, Jun-Yan & Park, Taesung & Isola, Phillip & Efros, Alexei. (2017). Unpaired Image-to-Image Translation Using Cycle-Consistent Adversarial Networks. 2242-2251. 10.1109/ICCV.2017.244. 
+7. Isola, Phillip & Zhu, Jun-Yan & Zhou, Tinghui & Efros, Alexei. (2017). Image-to-Image Translation with Conditional Adversarial Networks. 5967-5976. 10.1109/CVPR.2017.632. 
 
-2. Nogues, F. C., Huie, A., & Dasgupta, S. (2018). Object Detection using Domain Randomization and Generative Adversarial Refinement of Synthetic Images. arXiv. https://doi.org/10.48550/ARXIV.1805.11778
-
-3. Tobin, J., Fong, R., Ray, A., Schneider, J., Zaremba, W., & Abbeel, P. (2017). Domain Randomization for Transferring Deep Neural Networks from Simulation to the Real World. arXiv. https://doi.org/10.48550/ARXIV.1703.06907
-
-4. Borrego, J., Dehban, A., Figueiredo, R., Moreno, P., Bernardino, A., & Santos-Victor, J. (2018). Applying Domain Randomization to Synthetic Data for Object Category Detection. arXiv. https://doi.org/10.48550/ARXIV.1807.09834
-
-5. Zhu, J.-Y., Park, T., Isola, P., & Efros, A. A. (2017). Unpaired Image-to-Image Translation using Cycle-Consistent Adversarial Networks. arXiv. https://doi.org/10.48550/ARXIV.1703.10593
-
-6. Liu, H., Song, P., & Ding, R. (2020). WQT and DG-YOLO: towards domain generalization in underwater object detection. arXiv. https://doi.org/10.48550/ARXIV.2004.06333
-
-7. Tremblay, J., Prakash, A., Acuna, D., Brophy, M., Jampani, V., Anil, C., To, T., Cameracci, E., Boochoon, S., & Birchfield, S. (2018). Training Deep Networks with Synthetic Data: Bridging the Reality Gap by Domain Randomization. arXiv. https://doi.org/10.48550/ARXIV.1804.06516
 
